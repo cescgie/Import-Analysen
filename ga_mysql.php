@@ -18,12 +18,9 @@
 			  VersionId tinyint(4) NOT NULL,	  
 			  SequenceId bigint(11) NOT NULL,		  
 			  PlcNetworkId mediumint(6) NOT NULL,
-			  PlcSubNetworkId smallint(4) NOT NULL,
 			  WebsiteId bigint(11) NOT NULL,
 			  PlacementId bigint(11) NOT NULL,
-			  PageId bigint(11) NOT NULL,		  
 			  CmgnNetworkId mediumint(6) NOT NULL,
-			  CmgnSubNetworkId smallint(4) NOT NULL,
 			  CampaignId bigint(11) NOT NULL,
 			  MasterCampaignId bigint(11) NOT NULL,
 			  BannerId mediumint(4) NOT NULL,
@@ -39,8 +36,6 @@
 			  BrowserLanguage tinyint(4) NOT NULL,
 			  TLDId smallint(4) NOT NULL,
 			  MediaTypeId tinyint(4) NOT NULL,
-			  PlcContentTypeId tinyint(4) NOT NULL,
-			  Reserved2 smallint(4) NOT NULL,
 			  DateEntered int(4) NOT NULL,	
 			  Hour tinyint(4) NOT NULL,
 			  Minute tinyint(4) NOT NULL,	
@@ -185,14 +180,24 @@
 				};	
 			
 			//MySQL
-			$sqli = 'INSERT INTO ga ( VersionID, SequenceId, PlcNetworkId, PlcSubNetworkId, WebsiteId, PlacementId, PageId, CmgnNetworkId, CmgnSubNetworkId, CampaignId, MasterCampaignId, BannerId, BannerNumber, 
-				PaymentId,StateId, AreaCodeId,IpAddress, UserId, OsId, TagType,BrowserId, BrowserLanguage, TLDId, MediaTypeId, PlcContentTypeId, Reserved2, DateEntered, Hour, Minute, Second, AdServerIp, AdServerFarmId, 
-				DMAId, CountryId, ZipCodeId, CityId, IspId, CountTypeId, ConnectionTypeId) 
-				VALUES ( "'.$tmpObject[0].'", "'.$tmpObject[1].'", "'.$tmpObject[2].'", "'.$tmpObject[3].'", 
-										"'.$tmpObject[4].'", "'.$tmpObject[5].'", "'.$tmpObject[6].'", "'.$tmpObject[7].'", "'.$tmpObject[8].'", "'.$tmpObject[9].'", "'.$tmpObject[10].'", "'.$tmpObject[11].'", 
-										"'.$tmpObject[12].'", "'.$tmpObject[13].'", "'.$tmpObject[14].'", "'.$tmpObject[15].'", "'.$tmpObject[16].'", "'.$tmpObject[17].'", "'.$tmpObject[18].'", "'.$tmpObject[19].'", "'.$tmpObject[20].'", "'.$tmpObject[21].'", 
-										"'.$tmpObject[22].'", "'.$tmpObject[23].'", "'.$tmpObject[24].'", "'.$tmpObject[25].'", "'.$tmpObject[26].'", "'.$tmpObject[27].'", "'.$tmpObject[28].'", "'.$tmpObject[29].'", "'.$tmpObject[30].'", "'.$tmpObject[31].'", 
-										"'.$tmpObject[32].'", "'.$tmpObject[33].'", "'.$tmpObject[34].'", "'.$tmpObject[35].'", "'.$tmpObject[36].'", "'.$tmpObject[37].'", "'.$tmpObject[38].'")';
+			$sqli = 'INSERT INTO ga ( 
+				VersionID, SequenceId, PlcNetworkId, WebsiteId, 
+				PlacementId, CmgnNetworkId, CampaignId, 
+				MasterCampaignId, BannerId, BannerNumber, PaymentId, StateId, 
+				AreaCodeId, IpAddress, UserId, OsId, TagType,
+				BrowserId, BrowserLanguage, TLDId, MediaTypeId, 
+				DateEntered, Hour, Minute, Second, 
+				AdServerIp, AdServerFarmId, DMAId, CountryId, ZipCodeId, 
+				CityId, IspId, CountTypeId, ConnectionTypeId) 
+				VALUES ( 
+				"'.$tmpObject[0].'", "'.$tmpObject[1].'", "'.$tmpObject[2].'", "'.$tmpObject[4].'", 
+				"'.$tmpObject[5].'", "'.$tmpObject[7].'", "'.$tmpObject[9].'",
+				"'.$tmpObject[10].'", "'.$tmpObject[11].'", "'.$tmpObject[12].'", "'.$tmpObject[13].'", "'.$tmpObject[14].'", 
+				"'.$tmpObject[15].'", "'.$tmpObject[16].'", "'.$tmpObject[17].'", "'.$tmpObject[18].'", "'.$tmpObject[19].'", 
+				"'.$tmpObject[20].'", "'.$tmpObject[21].'", "'.$tmpObject[22].'", "'.$tmpObject[23].'", 
+				"'.$tmpObject[26].'", "'.$tmpObject[27].'", "'.$tmpObject[28].'", "'.$tmpObject[29].'", 
+				"'.$tmpObject[30].'", "'.$tmpObject[31].'", "'.$tmpObject[32].'", "'.$tmpObject[33].'", "'.$tmpObject[34].'", 
+				"'.$tmpObject[35].'", "'.$tmpObject[36].'", "'.$tmpObject[37].'", "'.$tmpObject[38].'")';
 				
 			$insert = $connect->query($sqli);
 			};
