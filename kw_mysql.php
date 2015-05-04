@@ -28,6 +28,7 @@
 			  MasterCampaignId int(4) NOT NULL,
 			  ExtensionType tinyint(4) NOT NULL,
 			  TimeStamp int(4) NOT NULL,
+			  KeywordText char(40) NOT NULL,
 			  KeywordTextLength smallint(4) NOT NULL,
 			  PRIMARY KEY  (id)
 		) ENGINE=MyISAM  DEFAULT CHARSET=latin1 ";
@@ -151,12 +152,12 @@
 				PlcSubNetworkId,WebsiteId, PlacementId, PageId,
 				CmgnNetworkId, CmgnSubNetworkId, CampaignId, 
 				MasterCampaignId, ExtensionType, TimeStamp, 
-				KeywordTextLength)  
+				KeywordText, KeywordTextLength)  
 				VALUES ( 
 				"'.$tmpObject[0].'", "'.$tmpObject[1].'", "'.$tmpObject[2].'", "'.$tmpObject[3].'", 
 				"'.$tmpObject[4].'", "'.$tmpObject[5].'", "'.$tmpObject[6].'", "'.$tmpObject[7].'", 
 				"'.$tmpObject[8].'", "'.$tmpObject[9].'", "'.$tmpObject[10].'", "'.$tmpObject[11].'", 
-				"'.$tmpObject[12].'", "'.$tmpObject[13].'")';
+				"'.$tmpObject[12].'", "'.$tmpObject[13].'","'.$tmpObject[14].'")';
 				
 			//echo $tmpObject[39];
 			$insert = $connect->query($sqli);
