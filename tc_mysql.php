@@ -21,6 +21,7 @@
 			  WebsiteId bigint(11) NOT NULL,
 			  PlacementId bigint(11) NOT NULL,
 			  CmgnNetworkId mediumint(6) NOT NULL,
+			  CmgnSubNetworkId tinyint(4) NOT NULL,
 			  CampaignId bigint(11) NOT NULL,
 			  MasterCampaignId bigint(11) NOT NULL,
 			  BannerId mediumint(4) NOT NULL,
